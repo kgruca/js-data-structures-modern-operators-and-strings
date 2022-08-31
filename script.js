@@ -30,22 +30,24 @@ const restaurant = {
   order: function(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+   orderDelivery: function({starterIndex = 0, mainIndex = 0, time = '22:00', address}) {
+    console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered at ${time} to ${address}`);
+   }
 };
 
-const openingHour = {
-  thu: {
-    open: 12,
-    close: 22,
-  },
-  fri: {
-    open: 11,
-    close: 23,
-  },
-  sat: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
+// can pass in an object into a function, and destructure the object in the function declaration above
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sol, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+}); // logs Order received! Garlic Bread and Risotto will be delivered at 22:30 to Via del Sol, 21
+
+// can also use default values in the desctructured argument in the function declaration
+restaurant.orderDelivery({
+  address: '1 Infinity Drive',
+}); // logs Order received! Focaccia and Pizza will be delivered at 22:00 to 1 Infinity Drive
 
 
 // OBJECT DESTRUCTURING
@@ -71,9 +73,10 @@ const obj = {a: 23, b: 7, c: 14};
 console.log(a, b);
 
 // nested objects
+/*
 const {fri: {open, close}} = openingHour;
 console.log(fri);
-
+*/
 
 // ARRAY DESTRUCTURING
 const arr = [2, 3, 4];

@@ -33,11 +33,34 @@ const restaurant = {
 };
 
 
-// array destructuring examples
+// OBJECT DESTRUCTURING
+// use the variable names from the object
+const {name, openingHours, categories} = restaurant;
+console.log(name, openingHours, categories); // logs Classico Italiano {thu: {…}, fri: {…}, sat: {…}} (4) ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']
+
+// you can also define new variable names, using the following method
+const {name: restaurantName, openingHours: hours, categories: tags} = restaurant;
+console.log(restaurantName, hours, tags); // logs Classico Italiano {thu: {…}, fri: {…}, sat: {…}} (4) ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']
+
+// you can assign default values, in case you're looking for a variable that doesn't exist within the object (and even combine this with the new variable names as in the example above)
+const {menu = [], starterMenu: starters = []} = restaurant; // menu isn't one of the object's properties, so an empty array should be logged. Since starterMenu exists, the default empty array will not be logged
+console.log(menu, starters); // logs [] (4) ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad']
+
+// mutating variables from the object
+let a = 111;
+let b = 999;
+const obj = {a: 23, b: 7, c: 14};
+// {a, b} = obj; // generates a syntax error
+// instead, to do the above, you wrap everything in parentheses
+({a, b} = obj);
+console.log(a, b);
+
+
+// ARRAY DESTRUCTURING
 const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+const aVar = arr[0];
+const bVar = arr[1];
+const cVar = arr[2];
 
 // or, instead you can use array destructuring
 const [x, y, z] = arr;

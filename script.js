@@ -32,6 +32,21 @@ const restaurant = {
   },
 };
 
+const openingHour = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 
 // OBJECT DESTRUCTURING
 // use the variable names from the object
@@ -54,6 +69,10 @@ const obj = {a: 23, b: 7, c: 14};
 // instead, to do the above, you wrap everything in parentheses
 ({a, b} = obj);
 console.log(a, b);
+
+// nested objects
+const {fri: {open, close}} = openingHour;
+console.log(fri);
 
 
 // ARRAY DESTRUCTURING

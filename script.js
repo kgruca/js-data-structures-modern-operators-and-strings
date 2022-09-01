@@ -38,6 +38,11 @@ const restaurant = {
    orderPasta: function(ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
    },
+
+   orderPizza: function(mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+   }
 };
 
 
@@ -76,6 +81,10 @@ add(2, 3, 4, 6, 8, 9, 2, 1); // logs 35
 // can easily use spread with this
 const x = [21, 2];
 add(...x); // logs 23
+
+// using rest operator for optional arguements. orderPizza function has one required ingredient, and the rest are optional
+restaurant.orderPizza('cheese'); // logs cheese []
+restaurant.orderPizza('cheese', 'pepperoni', 'pineapple'); // logs cheese ['pepperoni', 'pineapple']
 
 /*
 // using the spread operator

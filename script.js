@@ -36,6 +36,33 @@ const restaurant = {
    }
 };
 
+
+// using the spread operator
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // logs [1, 2, 7, 8, 9]
+console.log(badNewArr);
+// instead of doing the tedious process above, can use:
+const newArr = [1, 2, ...arr];
+console.log(newArr); // logs [1, 2, 7, 8, 9]
+// the spread operator takes out the individual values out of an arry. Ex:
+console.log(...newArr); // doesn't log an array, but logs 1 2 7 8 9. Same as writing:
+console.log(1, 2, 7, 8, 9); // logs 1 2 7 8 9
+
+const newMenu = [...restaurant.mainMenu, "Gnocchi"];
+console.log(newMenu); // logs ['Pizza', 'Pasta', 'Risotto', 'Gnocchi']
+// the spread operator is similar to destructuring, but doesn't create new varaiables
+// because of this, it's only used where values are needed to be written, separated by commas
+
+// uses of spread operator: create shallow copies of arrays, and to merge two arrays together
+// copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+// join two arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(restaurant.starterMenu); // logs ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad']
+console.log(restaurant.mainMenu); // logs ['Pizza', 'Pasta', 'Risotto']
+console.log(menu); // logs ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad', 'Pizza', 'Pasta', 'Risotto']
+
+/*
 // can pass in an object into a function, and destructure the object in the function declaration above
 restaurant.orderDelivery({
   time: '22:30',
@@ -73,10 +100,8 @@ const obj = {a: 23, b: 7, c: 14};
 console.log(a, b);
 
 // nested objects
-/*
-const {fri: {open, close}} = openingHour;
-console.log(fri);
-*/
+// const {fri: {open, close}} = openingHour;
+// console.log(fri);
 
 // ARRAY DESTRUCTURING
 const arr = [2, 3, 4];
@@ -98,12 +123,12 @@ console.log(firstAgain, third);
 
 // can do cool things with this, such as switch the values of variables in the array
 // this allows you to skip the temp variable. So, instead of:
-/* 
-const temp = first;
-first = second;
-second = temp;
-console.log(first, second); // logs Pizzeria Italian 
-*/
+
+// const temp = first;
+// first = second;
+// second = temp;
+// console.log(first, second); // logs Pizzeria Italian 
+
 // you can do:
 [first, second] = [second, first];
 console.log(first, second); // logs Pizzeria Italian
@@ -116,19 +141,20 @@ console.log(starter, mainCourse); // logs Garlic Bread Pizza
 
 // destructuring an array within an array - nested destructuring
 const nested = [1, 5, [3, 4]];
-/*
-const [i, , j] = nested;
-console.log(i, j); // logs 2 [3, 4]
-*/
+
+// const [i, , j] = nested;
+// console.log(i, j); // logs 2 [3, 4]
+
 // what if you want to get all the individual values? Use destructuring within destructuring
 const[i, , [j, k]] = nested;
 console.log(i, j, k); // logs 1 3 4
 
 
 // can use default values when trying to destructure an array and don't know how many elements it contains
-/*
-const [p, q, r] = [8, 9];
-console.log(p, q, r); // logs 8 9 undefined
-*/
+
+// const [p, q, r] = [8, 9];
+// console.log(p, q, r); // logs 8 9 undefined
+
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r); // logs 8 9 1
+*/

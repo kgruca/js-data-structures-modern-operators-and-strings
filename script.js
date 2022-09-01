@@ -79,6 +79,18 @@ console.log(letters); // logs ['K', 'r', 'z', 'y', 's', 'z', 't', 'o', 'f']
 // restaurant.orderPasta(...pastaIngredients); // logs Here is your delicious pasta with sun-dried tomatoes, parsley, and shrimp 
 // the logged message above depended on the ingredients written into the window prompt
 
+// since ES2018, the spread operator also works on objects, even though they aren't iterables
+// objects
+const newRestaurant = {foundedIn: 2030, ...restaurant, founder: 'Krzysztof Gruca'};
+console.log(newRestaurant);
+// as mentioned above, can create shallow copies of iterables 
+const restaurantCopy = {...restaurant};
+console.log(restaurant);
+console.log(restaurantCopy); // logs same as the restaurant log above
+// can then change the values of restaurantCopy without affecting the values of restaurant 
+restaurantCopy.name = 'Polsko-włoska Restauracja';
+console.log(restaurant.name); // logs Classico Italiano
+console.log(restaurantCopy.name); // logs Polsko-włoska Restauracja
 
 /*
 // can pass in an object into a function, and destructure the object in the function declaration above

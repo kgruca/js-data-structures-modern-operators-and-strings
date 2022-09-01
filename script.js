@@ -62,6 +62,12 @@ console.log(restaurant.starterMenu); // logs ['Focaccia', 'Bruschetta', 'Garlic 
 console.log(restaurant.mainMenu); // logs ['Pizza', 'Pasta', 'Risotto']
 console.log(menu); // logs ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad', 'Pizza', 'Pasta', 'Risotto']
 
+// the spread operator can be used on all iterables
+// iterables are arrays, strings, maps, sets, but NOT objects
+const str = "Krzysztof";
+const strCharacters = [...str];
+console.log(strCharacters); // logs ['K', 'r', 'z', 'y', 's', 'z', 't', 'o', 'f']
+
 /*
 // can pass in an object into a function, and destructure the object in the function declaration above
 restaurant.orderDelivery({

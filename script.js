@@ -42,6 +42,8 @@ const restaurant = {
 
 
 // using the rest operator
+
+// Part 1, Destructuring
 // while the spread operator unpacks values from an iterable, the rest operator packages values into an iterable (the opposite of the spread operator)
 // SPREAD, because on the RIGHT side of the assignment operator
 const arr = [1, 2, ...[3, 4]]; 
@@ -59,6 +61,21 @@ console.log(pizza, risotto, otherItems); // logs Pizza Risotto ['Focaccia', 'Br
 const {sat, ...weekdays} = restaurant.openingHours;
 console.log(sat, weekdays); // logs {open: 0, close: 24} {thu: {…}, fri: {…}}
 
+// Part 2, functions
+// rest arguments
+const add = function(...numbers) {
+  console.log(numbers);
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+add(2, 3); // logs 5
+add(2, 3, 4, 5, 6); // logs 20
+add(2, 3, 4, 6, 8, 9, 2, 1); // logs 35
+
+// can easily use spread with this
+const x = [21, 2];
+add(...x); // logs 23
 
 /*
 // using the spread operator

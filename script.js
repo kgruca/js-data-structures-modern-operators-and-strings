@@ -65,8 +65,11 @@ console.log(menu); // logs ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese S
 // the spread operator can be used on all iterables
 // iterables are arrays, strings, maps, sets, but NOT objects
 const str = "Krzysztof";
-const strCharacters = [...str];
-console.log(strCharacters); // logs ['K', 'r', 'z', 'y', 's', 'z', 't', 'o', 'f']
+const letters = [...str];
+console.log(letters); // logs ['K', 'r', 'z', 'y', 's', 'z', 't', 'o', 'f']
+// console.log(`${...str} Gruca`); // throws a SyntaxError (this is not a place that expects multiple values separated by a comma)
+// multiple values separated by a comma could be expected when passing arguments into a function, or building a new array
+
 
 /*
 // can pass in an object into a function, and destructure the object in the function declaration above

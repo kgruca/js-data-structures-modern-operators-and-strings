@@ -41,6 +41,21 @@ const restaurant = {
 };
 
 
+// using the rest operator
+// while the spread operator unpacks values from an iterable, the rest operator packages values into an iterable (the opposite of the spread operator)
+// SPREAD, because on the RIGHT side of the assignment operator
+const arr = [1, 2, ...[3, 4]]; 
+// REST, because on the LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others); // logs 1 2 [3, 4, 5]
+// called the rest operator because it groups the rest of the elements of the array/iterable
+
+const [pizza, , risotto, ...otherItems] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(pizza, risotto, otherItems); // logs Pizza Risotto ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad']
+// the rest operator must be last in the destructuring assignment, otherwise everything will be included (can't skip anything until the end of the array)
+
+
+/*
 // using the spread operator
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // logs [1, 2, 7, 8, 9]
@@ -92,7 +107,7 @@ restaurantCopy.name = 'Polsko-włoska Restauracja';
 console.log(restaurant.name); // logs Classico Italiano
 console.log(restaurantCopy.name); // logs Polsko-włoska Restauracja
 
-/*
+
 // can pass in an object into a function, and destructure the object in the function declaration above
 restaurant.orderDelivery({
   time: '22:30',

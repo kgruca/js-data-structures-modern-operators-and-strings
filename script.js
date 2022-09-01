@@ -33,7 +33,11 @@ const restaurant = {
 
    orderDelivery: function({starterIndex = 0, mainIndex = 0, time = '22:00', address}) {
     console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered at ${time} to ${address}`);
-   }
+   },
+
+   orderPasta: function(ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
+   },
 };
 
 
@@ -69,6 +73,11 @@ const letters = [...str];
 console.log(letters); // logs ['K', 'r', 'z', 'y', 's', 'z', 't', 'o', 'f']
 // console.log(`${...str} Gruca`); // throws a SyntaxError (this is not a place that expects multiple values separated by a comma)
 // multiple values separated by a comma could be expected when passing arguments into a function, or building a new array
+
+// ex. of passing arguments into a function using the spread operator
+// const pastaIngredients = [prompt('Let\'s make pasta! Ingredient 1?'), prompt('Ingredient 2?'), prompt('Ingredient 3?')];
+// restaurant.orderPasta(...pastaIngredients); // logs Here is your delicious pasta with sun-dried tomatoes, parsley, and shrimp 
+// the logged message above depended on the ingredients written into the window prompt
 
 
 /*

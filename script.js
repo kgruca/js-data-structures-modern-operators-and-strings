@@ -53,6 +53,11 @@ console.log(a, b, others); // logs 1 2 [3, 4, 5]
 const [pizza, , risotto, ...otherItems] = [...restaurant.mainMenu, ...restaurant.starterMenu];
 console.log(pizza, risotto, otherItems); // logs Pizza Risotto ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad']
 // the rest operator must be last in the destructuring assignment, otherwise everything will be included (can't skip anything until the end of the array)
+// trying to use the rest operator elsewhere results in a SyntaxError "rest element must be last element"
+
+// works on objects too
+const {sat, ...weekdays} = restaurant.openingHours;
+console.log(sat, weekdays); // logs {open: 0, close: 24} {thu: {…}, fri: {…}}
 
 
 /*

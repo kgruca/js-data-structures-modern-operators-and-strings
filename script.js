@@ -86,6 +86,10 @@ add(...x); // logs 23
 restaurant.orderPizza('cheese'); // logs cheese []
 restaurant.orderPizza('cheese', 'pepperoni', 'pineapple'); // logs cheese ['pepperoni', 'pineapple']
 
+// to sum up: the spread and rest operators look exactly the same but work in different ways, depending on where they are used
+// the SPREAD operator is used where otherwise we would write values separated by a comma 
+// the REST operator is used where otherwise we would write variable names separated by a comma 
+
 /*
 // using the spread operator
 const arr = [7, 8, 9];

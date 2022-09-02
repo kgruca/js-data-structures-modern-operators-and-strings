@@ -67,7 +67,22 @@ console.log(guests2); // logs 10
 // this is an easier way of setting default values than using a ternary operator
 // this will not work, however, if the property DOES exist and has a value of 0
 
+// Short-circuiting and the AND operator
+// works the opposite way of short-circuiting with the OR operator
+console.log(0 && 'Krzysztof'); // logs 0
+// this means that short-circuiting with the AND operator returns the first falsy value
+console.log(7 && 'Krzysztof'); // logs Krzysztof, since neither value is falsy (returns the last value, same as OR short-circuiting if no value is truthy)
 
+// practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('pepperoni', 'pineapples'); // logs pepperoni ['pineapples']
+}
+// the same result as above can be achieved by:
+restaurant.orderPizza && restaurant.orderPizza('pepperoni', 'pineapples'); // in one statement checks if restaurant.orderPizza exists and if it does then the function is called with arguments
+// logs pepperoni ['pineapples']
+
+// to summarize: the OR operator will return the first truthy value or the last falsy value (if there are only falsy values)
+// the AND operator will return the first falsy value, or the last truthy value (if there are only truthy values)
 
 
 /*

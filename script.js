@@ -46,6 +46,51 @@ const restaurant = {
 };
 
 
+//Logical Assignment Operators
+const rest1 = {
+  name: "Bona",
+  numGuests: 50,
+};
+
+const rest2 = {
+  name: "Pizza Delfina",
+  owner: "Svitlana Masovets",
+};
+
+// let's say we want to set a default number of guests for the objects that don't have this property
+// OR Assignment Operator:
+// rest1.numGuests = rest1.numGuests || 150;
+// rest2.numGuests = rest2.numGuests || 150;
+// the two lines above can be written in a more concise way, using the logical OR assignment operator
+rest1.numGuests ||= 150;
+rest2.numGuests ||= 150;
+console.log(rest1.numGuests); // logs 50
+console.log(rest2.numGuests); // logs 150 
+// once again, there will be a problem if the value is 0 (because it's falsy).
+// rest1.numGuests = 0;
+// rest1.numGuests ||= 150;
+// console.log(rest1.numGuests); // logs 150 instead of 0
+// instead, in this situation can use the Nullish Assignment Operator
+rest2.numGuests = 0;
+rest2.numGuests ??= 150;
+console.log(rest2.numGuests); // logs 0
+// once again, nullish means null or undefined
+
+// let's say we want to anonymize the name of the owners, if there is a value for owners
+// rest2.owner = rest2.owner && "<anonymous>";
+// console.log(rest2.owner); // logs <anonymous>
+// if you try this with rest1.owner (which doesn't exist), then you will get undefined instead:
+// rest1.owner = rest1.owner && "<anonymous>";
+// console.log(rest1.owner); // logs undefined
+// so in this situation can use nullish operator again
+// rest1.owner = rest1.owner ?? '<anonymous>'; 
+// console.log(rest1.owner); // logs <anonymous>
+// going back to the AND Assignment Operator:
+rest2.owner &&= '<anonymous>';
+console.log(rest2.owner); // logs <anonymous>
+
+
+/*
 // Nullish Coalescing Operator
 // helps deal with the situation when short-circuiting using the OR operator and have a value of 0. Ex:
 restaurant.numGuests = 0;
@@ -62,7 +107,6 @@ const guestsExample = restaurant.numberOfGuests ?? 10;
 console.log(guestsExample); // logs 10 since restaurant.numberOfGuests doesn't exist and is therefore undefined
 
 
-/*
 // Logical Operators and Short Circuiting
 // logical operators can use ANY data type, return ANY data type, 
 console.log(3 || 'Krzysztof'); // logs 3

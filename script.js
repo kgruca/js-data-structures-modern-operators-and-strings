@@ -46,6 +46,31 @@ const restaurant = {
 };
 
 
+// Logical Operators and Short Circuiting
+// logical operators can use ANY data type, return ANY data type, 
+console.log(3 || 'Krzysztof'); // logs 3
+
+// Short-circuiting and the OR operator
+// in the case of the OR operator: short-circuiting means that if it comes across the first value that is truthy then it will return that value
+// because 3 is a truthy value then it gets immediately returned ('Krzysztof' doesn't even get looked at)
+console.log('' || 'Krzysztof'); // logs Krzysztof
+console.log(true || 0); // logs true
+console.log(undefined || null); // logs null, even though null is falsy. Short-circuiting will choose the last value if all values are falsy
+
+// can use short-circuiting if you don't know whether a property exists
+// before had to use something like 
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10; // if restaurant.numGuests doesn't exist then guests1 gets a value of 10
+console.log(guests1); // logs 10
+// instead you can use 
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2); // logs 10
+// this is an easier way of setting default values than using a ternary operator
+// this will not work, however, if the property DOES exist and has a value of 0
+
+
+
+
+/*
 // using the rest operator
 
 // Part 1, Destructuring
@@ -90,7 +115,7 @@ restaurant.orderPizza('cheese', 'pepperoni', 'pineapple'); // logs cheese ['pepp
 // the SPREAD operator is used where otherwise we would write values separated by a comma 
 // the REST operator is used where otherwise we would write variable names separated by a comma 
 
-/*
+
 // using the spread operator
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // logs [1, 2, 7, 8, 9]

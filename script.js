@@ -46,6 +46,23 @@ const restaurant = {
 };
 
 
+// Nullish Coalescing Operator
+// helps deal with the situation when short-circuiting using the OR operator and have a value of 0. Ex:
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests); // logs 10, even though numGuests was set to 0. This is because the short-circuiting OR operator looks for truthy values and 0 is falsy
+// instead can use the nullish coalescing operator
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect); // logs 0
+// this works because the nullish coalescing operater works with the idea of nullish values instead of falsy ones
+// Nullish: null or undefined (NOT 0 or '')
+// so it searches for null values and omits them. since restaurant.numGuests is not nullish, this gets returned as the value for guests instead of 10
+// if hadn't set restaurant.numGuests = 0, then guests would have been logged as 10 instead
+const guestsExample = restaurant.numberOfGuests ?? 10;
+console.log(guestsExample); // logs 10 since restaurant.numberOfGuests doesn't exist and is therefore undefined
+
+
+/*
 // Logical Operators and Short Circuiting
 // logical operators can use ANY data type, return ANY data type, 
 console.log(3 || 'Krzysztof'); // logs 3
@@ -85,7 +102,6 @@ restaurant.orderPizza && restaurant.orderPizza('pepperoni', 'pineapples'); // in
 // the AND operator will return the first falsy value, or the last truthy value (if there are only truthy values)
 
 
-/*
 // using the rest operator
 
 // Part 1, Destructuring

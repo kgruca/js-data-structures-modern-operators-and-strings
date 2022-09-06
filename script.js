@@ -4,15 +4,7 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-// Data needed for first part of the section
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-  openingHours: {
+  const openingHours = {
     thu: {
       open: 12,
       close: 22,
@@ -25,9 +17,19 @@ const restaurant = {
       open: 0, // Open 24 hours
       close: 24,
     },
-  },
+  };
 
-  order: function(starterIndex, mainIndex) {
+// Data needed for first part of the section
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  openingHours: openingHours, // as of ES 6 can just write openingHours... this will create a property with the same name and use the data from the outer openingHours object
+
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
@@ -35,11 +37,11 @@ const restaurant = {
     console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered at ${time} to ${address}`);
    },
 
-   orderPasta: function(ing1, ing2, ing3) {
+   orderPasta(ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
    },
 
-   orderPizza: function(mainIngredient, ...otherIngredients) {
+   orderPizza(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
    }
@@ -58,6 +60,15 @@ const rest2 = {
 };
 
 
+// Object Literals
+// ES6 introduced three new enhancements to writing object literals
+// 1. if you are trying to use an independent object as a property inside another object, you used to have to write something like openingHours: openingHours (see comment above in the restaurant object)
+// instead, now you can just write openingHours
+// 2. function declarations don't need the function keyword anymore. Look at order, orderPasta, and orderPizza vs orderDelivery above. order, orderPasta, and orderPizza use the new enhancement 
+// 3. can compute property names (see Enhance Object Literals in Section 9)
+
+
+/*
 // The For-Of Loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (const item of menu) console.log(item); 
@@ -85,7 +96,6 @@ for (const [i, el] of menu.entries()){
 }
 
 
-/*
 // let's say we want to set a default number of guests for the objects that don't have this property
 // OR Assignment Operator:
 // rest1.numGuests = rest1.numGuests || 150;

@@ -77,6 +77,13 @@ console.log(restaurant.openingHours.mon?.open); // only if the property right be
 console.log(restaurant?.openingHours?.mon?.open); // logs undefined
 console.log(restaurant?.openingHours?.thu?.open); // logs 12 
 
+// practical example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed ';
+  console.log(`On ${day}, we open at ${open}`); 
+}
 
 
 /*

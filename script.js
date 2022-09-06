@@ -73,6 +73,10 @@ if (restaurant && restaurant.openingHours && restaurant.openingHours.mon) consol
 // Example:
 console.log(restaurant.openingHours.mon?.open); // only if the property right before the question mark exists (mon, in this case) then the property after will be read
 // if it doesn't exist then undefined will be returned 
+// and can do the same for multiple properties in the same statement
+console.log(restaurant?.openingHours?.mon?.open); // logs undefined
+console.log(restaurant?.openingHours?.thu?.open); // logs 12 
+
 
 
 /*

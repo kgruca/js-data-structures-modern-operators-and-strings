@@ -60,6 +60,22 @@ const rest2 = {
 };
 
 
+// Optional Chaining
+// let's say we're looking for opening hours of a day that doesn't exist in restaurant
+// console.log(restaurant.openingHours.mon); // logs undefined
+// what if we want to go further and find the opening hour of the day that doesn't exist:
+// console.log(restaurant.openingHours.mon.open); // logs a TypeError because your are looking for undefined.open
+// to get around this error, you could use
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon);
+// and this only checks for one property (mon). What if you don't know whether openingHours exists or even the restaurant object exist? Then would need:
+if (restaurant && restaurant.openingHours && restaurant.openingHours.mon) console.log(restaurant.openingHours.mon);
+// ES6's solution to this is a feature called Optional Chaining
+// Example:
+console.log(restaurant.openingHours.mon?.open); // only if the property right before the question mark exists (mon, in this case) then the property after will be read
+// if it doesn't exist then undefined will be returned 
+
+
+/*
 // Object Literals
 // ES6 introduced three new enhancements to writing object literals
 // 1. if you are trying to use an independent object as a property inside another object, you used to have to write something like openingHours: openingHours (see comment above in the restaurant object)
@@ -68,7 +84,6 @@ const rest2 = {
 // 3. can compute property names (see Enhance Object Literals in Section 9)
 
 
-/*
 // The For-Of Loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (const item of menu) console.log(item); 

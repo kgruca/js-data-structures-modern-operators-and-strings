@@ -60,7 +60,29 @@ const rest2 = {
 
 // The For-Of Loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-for (const item of menu) console.log(item);
+for (const item of menu) console.log(item); 
+// logs Focaccia Bruschetta Garlic Bread Caprese Salad Pizza Pasta Risotto
+
+// can still use "break" and "continue" in the for-of loop
+
+// a weakness of the for-of loop is when you are trying to find the current index
+// if you need the index then need to do it like this:
+for (const item of menu.entries()) {
+  console.log(item);
+} 
+// logs [0, 'Focaccia'] [1, 'Bruschetta'] [2, 'Garlic Bread'] [3, 'Caprese Salad'] [4, 'Pizza'] [5, 'Pasta'] [6, 'Risotto']
+// menu.entries() is an iterator
+console.log([...menu.entries()]); // loga [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
+// when expanded, each array within the resulting array consists of the index and the item from menu 
+// can print the menu in a nice way, using the following technique:
+for (const item of menu.entries()) {
+  console.log(`${item[0] + 1}: ${item[1]}`);
+}
+// which logs 1: Focaccia 2: Bruschetta 3: Garlic Bread 4: Caprese Salad 5: Pizza 6: Pasta 7: Risotto
+// BUT, can use a better technique: destructure item in the for loop statement
+for (const [i, el] of menu.entries()){
+  console.log(`${i + 1}: ${el}`); // logs 1: Focaccia 2: Bruschetta 3: Garlic Bread 4: Caprese Salad 5: Pizza 6: Pasta 7: Risotto
+}
 
 
 /*

@@ -57,6 +57,13 @@ const rest2 = {
   owner: "Svitlana Masovets",
 };
 
+
+// The For-Of Loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+
+
+/*
 // let's say we want to set a default number of guests for the objects that don't have this property
 // OR Assignment Operator:
 // rest1.numGuests = rest1.numGuests || 150;
@@ -90,7 +97,6 @@ rest2.owner &&= '<anonymous>';
 console.log(rest2.owner); // logs <anonymous>
 
 
-/*
 // Nullish Coalescing Operator
 // helps deal with the situation when short-circuiting using the OR operator and have a value of 0. Ex:
 restaurant.numGuests = 0;

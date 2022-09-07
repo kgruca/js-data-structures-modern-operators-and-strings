@@ -61,6 +61,12 @@ for (const day of Object.keys(openingHours)) {
 
 console.log(openStr); // logs We are open on 3 days: thu, fri, sat, 
 
+// Property Values
+const values = Object.values(openingHours);
+console.log(values); // logs 0: {open: 12, close: 22} 1: {open: 11, close: 23} 2: {open: 0, close: 24} length: 3 [[Prototype]]: Array(0)
+
+
+
 
 /*
 // Optional Chaining

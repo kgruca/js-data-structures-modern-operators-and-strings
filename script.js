@@ -65,7 +65,16 @@ console.log(openStr); // logs We are open on 3 days: thu, fri, sat,
 const values = Object.values(openingHours);
 console.log(values); // logs 0: {open: 12, close: 22} 1: {open: 11, close: 23} 2: {open: 0, close: 24} length: 3 [[Prototype]]: Array(0)
 
+// Entire object
+const entries = Object.entries(openingHours);
+console.log(entries); // logs [Array(2), Array(2), Array(2)] 0: (2) ['thu', {…}] 1: (2) ['fri', {…}] 2: (2) ['sat', {…}] length: 3 [[Prototype]]: Array(0)
 
+for (const [day, {open, close}] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
+// destructure entries above to the keys, and the values
+// since values is an object, this can be destructured further to {open, close}
+// logs On thu we open at 12 and close at 22 On fri we open at 11 and close at 23 On sat we open at 0 and close at 24
 
 
 /*

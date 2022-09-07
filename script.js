@@ -48,6 +48,10 @@ const restaurant = {
 };
 
 
+// Looping objects
+
+
+/*
 //Logical Assignment Operators
 const rest1 = {
   name: "Bona",
@@ -86,7 +90,6 @@ for (const day of days) {
 }
 
 
-/*
 // Object Literals
 // ES6 introduced three new enhancements to writing object literals
 // 1. if you are trying to use an independent object as a property inside another object, you used to have to write something like openingHours: openingHours (see comment above in the restaurant object)

@@ -49,21 +49,20 @@ const restaurant = {
 
 
 // Looping objects
+// Property Names
+const properties = Object.keys(openingHours);
+console.log(properties); // logs ['thu', 'fri', 'sat']
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of Object.keys(openingHours)) {
+  openStr += `${day}, `;
+}
+
+console.log(openStr); // logs We are open on 3 days: thu, fri, sat, 
 
 
 /*
-//Logical Assignment Operators
-const rest1 = {
-  name: "Bona",
-  numGuests: 50,
-};
-
-const rest2 = {
-  name: "Pizza Delfina",
-  owner: "Svitlana Masovets",
-};
-
-
 // Optional Chaining
 // let's say we're looking for opening hours of a day that doesn't exist in restaurant
 // console.log(restaurant.openingHours.mon); // logs undefined
@@ -123,6 +122,18 @@ for (const item of menu.entries()) {
 for (const [i, el] of menu.entries()){
   console.log(`${i + 1}: ${el}`); // logs 1: Focaccia 2: Bruschetta 3: Garlic Bread 4: Caprese Salad 5: Pizza 6: Pasta 7: Risotto
 }
+
+
+//Logical Assignment Operators
+const rest1 = {
+  name: "Bona",
+  numGuests: 50,
+};
+
+const rest2 = {
+  name: "Pizza Delfina",
+  owner: "Svitlana Masovets",
+};
 
 
 // let's say we want to set a default number of guests for the objects that don't have this property

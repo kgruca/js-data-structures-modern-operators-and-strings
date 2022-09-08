@@ -73,8 +73,20 @@ console.log(ordersSet[1]); // logs undefined
 // can clear the data in a set
 // ordersSet.clear();
 // console.log(ordersSet); // returns {size: 0}
+// can loop through a set, just like any other iterable
+for (const order of ordersSet) console.log(order); // logs Pasta Pizza Garlic Bread
 
-
+// one big use case of sets is to remove duplicate values out of arrays. Ex:
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// let's say we want the unique values from the array above 
+// const staffUnique = new Set(staff);
+// console.log(staffUnique); // logs {'Waiter', 'Chef', 'Manager'}
+// you can use this and destructuring (works on sets, too), to quickly create a new array with unique values
+const staffUnique = [... new Set(staff)];
+console.log(staffUnique); // logs ['Waiter', 'Chef', 'Manager']
+// if you want to know just the size of the unique positions then you can do it like this:
+console.log(new Set(staff).size); // logs 3
+// to sum up: use sets when you need to work with unique values
 
 
 /*

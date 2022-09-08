@@ -56,6 +56,25 @@ console.log(ordersSet); // logs {'Pasta', 'Pizza', 'Risotto'}
 // and the order of items in a set is irrelevent
 // just like arrays, sets are iterables. Strings are also iterables and can be passed into sets
 console.log(new Set('Krzysztof')); // logs {'K', 'r', 'z', 'y', 's', …}
+// since sets only store unique values, they can be used to find the number of unique elements that have been passed in
+console.log(ordersSet.size); // logs 3
+// can check if a certain element is in a set:
+console.log(ordersSet.has('Pizza')); // logs true
+console.log(ordersSet.has('Bread')); // logs false
+// can add new elements to a set
+ordersSet.add('Garlic Bread');
+console.log(ordersSet); // {'Pasta', 'Pizza', 'Risotto', 'Garlic Bread'}
+ordersSet.delete('Risotto');
+console.log(ordersSet); // logs {'Pasta', 'Pizza', 'Garlic Bread'}
+// cannot retrieve an element by index
+console.log(ordersSet[1]); // logs undefined
+// in sets, there are no indeces, and no ways to get a value out of a set
+// no need to get values out of a set, because for this you can just use an array
+// can clear the data in a set
+// ordersSet.clear();
+// console.log(ordersSet); // returns {size: 0}
+
+
 
 
 /*

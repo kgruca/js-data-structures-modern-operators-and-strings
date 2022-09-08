@@ -51,6 +51,10 @@ const restaurant = {
 // Sets
 const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
 console.log(ordersSet); // logs {'Pasta', 'Pizza', 'Risotto'}
+// a set is therefore very much like an array, but differs in that:
+// all the duplicates are gone
+// and the order of items in a set is irrelevent
+// just like arrays, sets are iterables. Strings are also iterables and can be passed into sets
 console.log(new Set('Krzysztof')); // logs {'K', 'r', 'z', 'y', 's', …}
 
 

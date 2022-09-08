@@ -48,6 +48,13 @@ const restaurant = {
 };
 
 
+// Sets
+const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
+console.log(ordersSet); // logs {'Pasta', 'Pizza', 'Risotto'}
+console.log(new Set('Krzysztof')); // logs {'K', 'r', 'z', 'y', 's', …}
+
+
+/*
 // Looping objects
 // Property Names
 const properties = Object.keys(openingHours);
@@ -77,7 +84,6 @@ for (const [day, {open, close}] of entries) {
 // logs On thu we open at 12 and close at 22 On fri we open at 11 and close at 23 On sat we open at 0 and close at 24
 
 
-/*
 // Optional Chaining
 // let's say we're looking for opening hours of a day that doesn't exist in restaurant
 // console.log(restaurant.openingHours.mon); // logs undefined

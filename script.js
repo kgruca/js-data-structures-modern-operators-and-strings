@@ -62,6 +62,12 @@ const question = new Map([
 ]);
 console.log(question); 
 // logs {'question' => 'What is the best programming language in the world?', 1 => 'C', 2 => 'Java', 3 => 'JavaScript', 'correct' => 3, …}
+// this array of arrays makes this very similar to Object.entries(), which means that there is an easy way to convert from objects to maps
+console.log(Object.entries(openingHours)); // logs [Array(2), Array(2), Array(2)]
+const hoursMap = new Map(Object.entries(openingHours)); 
+// can do this, since the structure of object.entries is exactly the same structure as the array of arrays passed into question
+console.log(hoursMap); // logs {'thu' => {…}, 'fri' => {…}, 'sat' => {…}}
+// remember this for when you need a map and already have an object
 
 
 /*

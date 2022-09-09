@@ -48,6 +48,23 @@ const restaurant = {
 };
 
 
+// there's another way to populate a map besides the set method
+// set method is cumbersome when there are a lot of values to set
+// instead can use an array of array to add values when creating the map
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 🎉'],
+  [false, 'Wrong 💩']
+]);
+console.log(question); 
+// logs {'question' => 'What is the best programming language in the world?', 1 => 'C', 2 => 'Java', 3 => 'JavaScript', 'correct' => 3, …}
+
+
+/*
 // Maps: Fundamentals
 // a map is a data structure which can be used to map values to keys
 // just like objects, maps are stored as key-value pairs
@@ -98,7 +115,6 @@ console.log(rest); // logs {Array(2) => 'test', Array(2) => 'test', h1 => 'Headi
 // when you expand the output of the above console.log statement, and hover over the h1 key, it highlight the h1 header on the page
 
 
-/*
 // Sets
 const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
 console.log(ordersSet); // logs {'Pasta', 'Pizza', 'Risotto'}

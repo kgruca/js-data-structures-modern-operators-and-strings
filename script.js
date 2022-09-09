@@ -69,7 +69,12 @@ const time = 21;
 console.log(rest.get(time >= rest.get('open') && time < rest.get('close'))); // can do this, since the outcome will either be true or false:
 // logs We are open :D
 
+// using the has method
+console.log(rest.has('categories')); // logs true
 
+// delete elements from map
+rest.delete(2); 
+console.log(rest); // logs {'name' => 'Clasico Italiano', 1 => 'Firenze, Italia', 3 => 'Krakow, Polska', 'categories' => Array(4), 'open' => 11, …}
 
 
 /*

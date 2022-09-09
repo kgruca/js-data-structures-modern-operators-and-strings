@@ -48,6 +48,23 @@ const restaurant = {
 };
 
 
+// Maps: Fundamentals
+// a map is a data structure which can be used to map values to keys
+// just like objects, maps are stored as key-value pairs
+// the big difference is that in maps, keys can be of any types - in objects, they are strings
+const rest = new Map();
+rest.set('name', 'Clasico Italiano');
+rest.set(1, 'Firenze, Italia');
+rest.set(2, 'Mountain View, USA');
+console.log(rest.set(3, 'Krakow, Polska')); // can add a new key-value pair when using console.log
+// logs {'name' => 'Clasico Italiano', 1 => 'Firenze, Italia', 2 => 'Mountain View, USA', 3 => 'Krakow, Polska'}
+// because the set method returns the updated map, we can chain it 
+rest.set('categories', ['Italian', 'Pizzeria', 'Healthy', 'Organic']).set('open', 11).set('close', 23).set(true, 'We are open :D').set(false, 'We are closed :(');
+console.log(rest.get('name')); // logs Clasico Italiano
+console.log(rest.get(true)); // logs We are open :D
+console.log(rest.get('1')); // logs undefined, because there is no '1' key (just 1)
+
+
 // Sets
 const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
 console.log(ordersSet); // logs {'Pasta', 'Pizza', 'Risotto'}

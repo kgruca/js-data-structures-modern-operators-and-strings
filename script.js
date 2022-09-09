@@ -84,6 +84,14 @@ console.log(rest.size); // logs 8
 rest.clear();
 console.log(rest); // logs {size: 0}
 
+// can even set arrays as the key
+rest.set([1, 2], 'test');
+console.log(rest.get([1, 2])); // logs undefined - need to get the value in a different way
+// the reason for this is that the two arrays (in the .set method call, and in the console.log call) are two separate objects in the heap
+// instead, need to create an array first, then use that array in the .set method
+const arr = [1, 2];
+rest.set(arr, 'test');
+console.log(rest.get(arr)); // logs test
 
 
 

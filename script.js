@@ -71,6 +71,7 @@ console.log(hoursMap); // logs {'thu' => {…}, 'fri' => {…}, 'sat' => {…}}
 
 // maps are iterables
 // Ex. Quiz App
+/* commenting out to get rid of prompt popup
 console.log(question.get('question')); // logs What is the best programming language in the world?
 for (const [key, value] of question) {
   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
@@ -79,6 +80,20 @@ for (const [key, value] of question) {
 const answer = Number(prompt(' Your answer: '));
 // answer === question.get('correct') ? alert(question.get(true)) : alert(question.get(false)); // this works but can simplify
 alert(question.get(answer === question.get('correct')));
+*/
+
+// sometimes we also need to convert a map back into an array
+// Convert map to array:
+console.log([...question]); // unpack the map using the spread operator within an array
+// logs [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
+// can also use some of the same methods as arrays
+console.log(question.entries()); // logs {'question' => 'What is the best programming language in the world?', 1 => 'C', 2 => 'Java', 3 => 'JavaScript', 'correct' => 3, …}
+console.log(question.keys()); // logs {'question', 1, 2, 3, 'correct', …}
+console.log(question.values()); // logs MapIterator {'What is the best programming language in the world?', 'C', 'Java', 'JavaScript', 3, …}  
+// to create a nicer log, can put each of the above into an array and use the spread operator
+console.log([...question.entries()]); // logs MapIterator [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
+console.log([...question.keys()]); // logs MapIterator ['question', 1, 2, 3, 'correct', true, false]
+console.log([...question.values()]); // logs ['What is the best programming language in the world?', 'C', 'Java', 'JavaScript', 3, 'Correct 🎉', 'Wrong 💩']
 
 
 /*

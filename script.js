@@ -75,6 +75,16 @@ console.log(rest.has('categories')); // logs true
 // delete elements from map
 rest.delete(2); 
 console.log(rest); // logs {'name' => 'Clasico Italiano', 1 => 'Firenze, Italia', 3 => 'Krakow, Polska', 'categories' => Array(4), 'open' => 11, …}
+// can also delete object elements using the delete parameter but that's a slow process and its use is discouraged
+
+// the size method checks for the "length" of the map
+console.log(rest.size); // logs 8 
+
+// the clear method removes all items from the map
+rest.clear();
+console.log(rest); // logs {size: 0}
+
+
 
 
 /*

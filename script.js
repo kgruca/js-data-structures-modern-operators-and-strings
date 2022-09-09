@@ -69,6 +69,17 @@ const hoursMap = new Map(Object.entries(openingHours));
 console.log(hoursMap); // logs {'thu' => {…}, 'fri' => {…}, 'sat' => {…}}
 // remember this for when you need a map and already have an object
 
+// maps are iterables
+// Ex. Quiz App
+console.log(question.get('question')); // logs What is the best programming language in the world?
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+// logs Answer 1: C Answer 2: Java Answer 3: JavaScript
+const answer = Number(prompt(' Your answer: '));
+// answer === question.get('correct') ? alert(question.get(true)) : alert(question.get(false)); // this works but can simplify
+alert(question.get(answer === question.get('correct')));
+
 
 /*
 // Maps: Fundamentals

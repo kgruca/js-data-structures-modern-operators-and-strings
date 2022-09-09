@@ -93,6 +93,9 @@ const arr = [1, 2];
 rest.set(arr, 'test');
 console.log(rest.get(arr)); // logs test
 
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest); // logs {Array(2) => 'test', Array(2) => 'test', h1 => 'Heading'}
+// when you expand the output of the above console.log statement, and hover over the h1 key, it highlight the h1 header on the page
 
 
 /*

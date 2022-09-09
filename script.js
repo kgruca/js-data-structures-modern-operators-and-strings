@@ -48,6 +48,52 @@ const restaurant = {
 };
 
 
+// pros and cons of the 4 built-in data structures: arrays, objects, sets, maps
+
+// there are two more data structures that are built in: WeakMap, WeakSet
+// data structures used that are not built-in: stacks, queues, linked lists, trees, hash tables
+
+// sources of data - 
+// from the program itself (data written directly into source code), 
+// from the UI (data input from user or data written in DOM), 
+// from external sources (data fetched from Web API, for example)
+
+// need a simple list of values? use an array or set
+// need key-value pairs? use object or map 
+
+// if using API, data comes in a JSON format (which is an object)
+// some of the data within the JSON object is an array of objects
+
+// Arrays vs Sets - should be used for simplest of values when don't need to describe the values
+// Arrays: use when 
+// values need to be ordered
+// when need to keep duplicates
+// when need to manipulate the data
+// Sets: use when 
+// working with unique values
+// high-performance is really important (searching for an item or deleting an item can be up to 10x faster than for arrays)
+// need to remove duplicates from arrays 
+
+// Objects vs Maps - should be used when values need to be described using keys
+// Objects: 
+// have been the traditional key-value data structure b/c there were no maps before ES6
+// biggest advantage over sets is that it's easier to write and access using . and []
+// but using objects as key-value stores has some technical disadvantages (some people say objects are abused for this)
+// Maps:
+// offer better performance (are better-suited for simple key-value stores)
+// can use any data types as the keys
+// easy to iterate
+// easy to compute the size
+
+// Objects: use when 
+// you need to include functions (methods)
+// working with JSON
+// Sets: use when
+// simply need to map keys to values
+// need keys that are not strings  
+
+
+/*
 // there's another way to populate a map besides the set method
 // set method is cumbersome when there are a lot of values to set
 // instead can use an array of array to add values when creating the map
@@ -71,16 +117,16 @@ console.log(hoursMap); // logs {'thu' => {…}, 'fri' => {…}, 'sat' => {…}}
 
 // maps are iterables
 // Ex. Quiz App
-/* commenting out to get rid of prompt popup
-console.log(question.get('question')); // logs What is the best programming language in the world?
-for (const [key, value] of question) {
-  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
-}
+// commenting out to get rid of prompt popup
+// console.log(question.get('question')); // logs What is the best programming language in the world?
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
 // logs Answer 1: C Answer 2: Java Answer 3: JavaScript
-const answer = Number(prompt(' Your answer: '));
+// const answer = Number(prompt(' Your answer: '));
 // answer === question.get('correct') ? alert(question.get(true)) : alert(question.get(false)); // this works but can simplify
-alert(question.get(answer === question.get('correct')));
-*/
+// alert(question.get(answer === question.get('correct')));
+
 
 // sometimes we also need to convert a map back into an array
 // Convert map to array:
@@ -96,7 +142,6 @@ console.log([...question.keys()]); // logs MapIterator ['question', 1, 2, 3, 'co
 console.log([...question.values()]); // logs ['What is the best programming language in the world?', 'C', 'Java', 'JavaScript', 3, 'Correct 🎉', 'Wrong 💩']
 
 
-/*
 // Maps: Fundamentals
 // a map is a data structure which can be used to map values to keys
 // just like objects, maps are stored as key-value pairs

@@ -64,7 +64,15 @@ console.log(rest.get('name')); // logs Clasico Italiano
 console.log(rest.get(true)); // logs We are open :D
 console.log(rest.get('1')); // logs undefined, because there is no '1' key (just 1)
 
+const time = 21;
+// check to see if the restaurant is open or closed at 21
+console.log(rest.get(time >= rest.get('open') && time < rest.get('close'))); // can do this, since the outcome will either be true or false:
+// logs We are open :D
 
+
+
+
+/*
 // Sets
 const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
 console.log(ordersSet); // logs {'Pasta', 'Pizza', 'Risotto'}
@@ -106,7 +114,6 @@ console.log(new Set(staff).size); // logs 3
 // to sum up: use sets when you need to work with unique values
 
 
-/*
 // Looping objects
 // Property Names
 const properties = Object.keys(openingHours);

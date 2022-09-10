@@ -102,6 +102,21 @@ const passengerLower = passenger.toLowerCase(); // makes it sasha
 const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
 console.log(passengerCorrect); // logs Sasha
 
+// comparing emails
+const email = 'krzysztof@gruca.io';
+const loginEmail = '    Krzysztof@Gruca.IO \n';
+// need to compare the two emails - usually capitalization doesn't matter in emails
+const lowerEmail = loginEmail.toLowerCase(); // creates '    krzysztof@gruca.io \n'
+// now to get rid of whitespace:
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail); // logs krzysztof@gruca.io
+// or can do this all in one step
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail); // logs krzysztof@gruca.io
+console.log(email === normalizedEmail); // logs true
+
+
+
 
 /*
 // pros and cons of the 4 built-in data structures: arrays, objects, sets, maps

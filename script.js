@@ -128,6 +128,36 @@ console.log('All passengers come to boarding door 69. Boarding door 69!'.replace
 // replaceAll() replaces all the occurrences
 // another solution that can be used is a 'regular expression'
 console.log('All passengers come to boarding door 69. Boarding door 69!'.replaceAll(/door/g, 'gate')); // also logs All passengers come to boarding gate 69. Boarding gate 69!
+// note: replace() is case-sensistive
+
+// three string methods that return Booleans: includes(), startsWith(), endsWith()
+const newPlane = 'Airbus A320neo';
+const oldPlane = 'Airbus A320';
+console.log(newPlane.includes('A320')); // logs true
+console.log(newPlane.includes('Boeing')); // logs false
+
+console.log(newPlane.startsWith('A320')); // logs false
+console.log(newPlane.startsWith('Air')); // logs true
+
+console.log(newPlane.endsWith('neo')); // logs true
+console.log(newPlane.endsWith('Air')); // logs false
+
+if (newPlane.startsWith('Airbus') && newPlane.endsWith('neo')) console.log('Part of the NEW Airbus family!'); // logs Part of the NEW Airbus family!
+if (oldPlane.startsWith('Airbus') && oldPlane.endsWith('neo')) console.log('Part of the NEW Airbus family!'); // logs nothing
+
+// Practice exercise
+const checkBaggage = function(items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard')
+  }
+};
+
+checkBaggage('I have a laptop, some food, and a pocket Knife'); // logs You are NOT allowed on board
+checkBaggage('Socks and a camera'); // logs Welcome aboard
+checkBaggage('Got some snacks and a gun for protection'); // logs You are NOT allowed on board
 
 
 /*

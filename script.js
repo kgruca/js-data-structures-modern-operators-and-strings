@@ -86,6 +86,13 @@ checkMiddleSeat('27B'); // logs You got the middle seat 💩
 checkMiddleSeat('32F'); // logs You did not get the middle seat 🥳
 checkMiddleSeat('3E'); // logs You got the middle seat 💩
 
+// string are primitives, so why do they methods?
+// when methods are used on a string, JS converts the string into an object with the same context
+// this process is called boxing because it takes the string and puts it in a "box" - the object
+console.log(new String('Krzysztof')); // logs String {"Krzysztof"}
+console.log(typeof new String('Krzysztof')); // logs object
+
+
 
 /*
 // pros and cons of the 4 built-in data structures: arrays, objects, sets, maps

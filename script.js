@@ -48,6 +48,36 @@ const restaurant = {
 };
 
 
+const airline = 'LOT';
+const plane = 'Dreamliner';
+console.log(plane[0]); // logs D
+console.log(plane[1]); // logs r
+console.log(plane[2]);  // logs e
+console.log(plane.length); // logs 10 
+console.log(plane.indexOf('e')); // logs 2
+// .indexOf() gives the FIRST occurrence of the value you are passing in
+// to get the last occurrence, use lastIndexOf()
+console.log(plane.lastIndexOf('e')); // logs 8
+console.log(airline.indexOf('lot')); // logs -1 because this is not found
+
+// can use indices to extract parts of strings using slice method
+console.log(airline.slice(1)); // logs OT
+// the first value passed in is the beginning parameter, or where the extraction will start
+// the slice method always returns a new string and this can be stored in another variable
+// can also specify an end parameter
+console.log(airline.slice(0,2)); // logs LO
+// the end parameter for the slice method results in values up to but not including the index passed in as the end parameter
+// that is why 'T' is not logged, since it's at index 2
+// the length of the returned string will always be (end parameter - beginning paremeter)
+// instead of hardcoding indices, can use the indexOf method instead
+console.log(airline.slice(0, airline.indexOf('T'))); // logs LO
+// can use negative ins as values
+console.log(plane.slice(0, -1)); // logs Dreamline
+
+
+
+
+/*
 // pros and cons of the 4 built-in data structures: arrays, objects, sets, maps
 
 // there are two more data structures that are built in: WeakMap, WeakSet
@@ -93,7 +123,6 @@ const restaurant = {
 // need keys that are not strings  
 
 
-/*
 // there's another way to populate a map besides the set method
 // set method is cumbersome when there are a lot of values to set
 // instead can use an array of array to add values when creating the map

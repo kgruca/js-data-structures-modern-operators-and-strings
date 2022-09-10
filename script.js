@@ -75,6 +75,11 @@ const capitalizeName = function(fullName){
 const Sveta = capitalizeName('svitlana mikolaevna masovets');
 console.log(Sveta); // logs Svitlana Mikolaevna Masovets
 
+// padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(35, '+')); // logs +++++++++++Go to gate 23!++++++++++
+// the first argument in padStart is the total length of the string 
+
 
 /*
 const airline = 'LOT';

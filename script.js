@@ -92,6 +92,15 @@ checkMiddleSeat('3E'); // logs You got the middle seat 💩
 console.log(new String('Krzysztof')); // logs String {"Krzysztof"}
 console.log(typeof new String('Krzysztof')); // logs object
 
+// transforming strings to lower-case and upper-case
+console.log(airline.toLowerCase()); // logs lot
+console.log(airline.toUpperCase()); // logs LOT 
+
+// fix capitalization in name
+const passenger = 'sAsHA'; // want it to look like Sasha
+const passengerLower = passenger.toLowerCase(); // makes it sasha
+const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect); // logs Sasha
 
 
 /*

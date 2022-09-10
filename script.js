@@ -115,7 +115,19 @@ const normalizedEmail = loginEmail.toLowerCase().trim();
 console.log(normalizedEmail); // logs krzysztof@gruca.io
 console.log(email === normalizedEmail); // logs true
 
+// replacing
+const priceZloty = '2400,99PLN'; // let's say we want to compare this price to USD 
+const priceUSD = priceZloty.replace('PLN', '$').replace(',', '.'); // 2400.99$
+console.log(priceUSD); // logs 2400.99$
 
+const announcement = 'All passengers come to boarding door 69. Boarding door 69!';
+
+console.log(announcement.replace('door', 'gate')); // logs All passengers come to boarding gate 69. Boarding door 69!
+// so replace() only replaces the first occurrence
+console.log('All passengers come to boarding door 69. Boarding door 69!'.replaceAll('door', 'gate')); // logs All passengers come to boarding gate 69. Boarding gate 69!
+// replaceAll() replaces all the occurrences
+// another solution that can be used is a 'regular expression'
+console.log('All passengers come to boarding door 69. Boarding door 69!'.replaceAll(/door/g, 'gate')); // also logs All passengers come to boarding gate 69. Boarding gate 69!
 
 
 /*

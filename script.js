@@ -59,6 +59,21 @@ console.log(lastName); // logs Gruca
 const newName = ['Emperor King', firstName, lastName.toUpperCase()].join(' ');
 console.log(newName); // logs Emperor King Krzysztof GRUCA
 
+// practice
+const capitalizeName = function(fullName){
+  const nameArr = fullName.split(' ');
+  const newNameArr = [];
+
+  for (const name of nameArr){
+    // newNameArr.push(name[0].toUpperCase() + name.slice(1));
+    // or can do
+    newNameArr.push(name.replace(name[0], name[0].toUpperCase()));
+  }
+  return newNameArr.join(' ');
+};
+
+const Sveta = capitalizeName('svitlana mikolaevna masovets');
+console.log(Sveta); // logs Svitlana Mikolaevna Masovets
 
 
 /*

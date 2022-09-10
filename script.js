@@ -48,6 +48,20 @@ const restaurant = {
 };
 
 
+// More string methods - split
+console.log('a+very+nice+string'.split('+')); // logs ['a', 'very', 'nice', 'string']
+console.log('Krzysztof Gruca'.split(' ')); // logs ['Krzysztof', 'Gruca']
+const [firstName, lastName] = 'Krzysztof Gruca'.split(' ');
+console.log(firstName); // logs Krzysztof
+console.log(lastName); // logs Gruca
+
+// join()
+const newName = ['Emperor King', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName); // logs Emperor King Krzysztof GRUCA
+
+
+
+/*
 const airline = 'LOT';
 const plane = 'Dreamliner';
 console.log(plane[0]); // logs D
@@ -160,7 +174,6 @@ checkBaggage('Socks and a camera'); // logs Welcome aboard
 checkBaggage('Got some snacks and a gun for protection'); // logs You are NOT allowed on board
 
 
-/*
 // pros and cons of the 4 built-in data structures: arrays, objects, sets, maps
 
 // there are two more data structures that are built in: WeakMap, WeakSet

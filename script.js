@@ -74,7 +74,17 @@ console.log(airline.slice(0, airline.indexOf('T'))); // logs LO
 // can use negative ins as values
 console.log(plane.slice(0, -1)); // logs Dreamline
 
+// check Middle Seat
+const checkMiddleSeat = function(seat) {
+  // B and E are middle seats
+  const lastLetter = seat.slice(-1);
+  lastLetter === 'B' || lastLetter === "E" ? console.log('You got the middle seat 💩') : console.log('You did not get the middle seat 🥳');
+}
 
+checkMiddleSeat('11A'); // logs You did not get the middle seat 🥳
+checkMiddleSeat('27B'); // logs You got the middle seat 💩
+checkMiddleSeat('32F'); // logs You did not get the middle seat 🥳
+checkMiddleSeat('3E'); // logs You got the middle seat 💩
 
 
 /*

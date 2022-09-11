@@ -78,7 +78,27 @@ console.log(Sveta); // logs Svitlana Mikolaevna Masovets
 // padding
 const message = 'Go to gate 23!';
 console.log(message.padStart(25, '+').padEnd(35, '+')); // logs +++++++++++Go to gate 23!++++++++++
-// the first argument in padStart is the total length of the string 
+// the first argument in padStart and padEnd is the total length of the string 
+
+const maskCredit = function(number) {
+  const str = number + ''; // automatically converts the variable to a string
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCredit(4333566678889000)); // logs ************9000
+console.log(maskCredit('4337899078883400')); // logs ************3400
+
+// repeat method
+const message2 = "Bad weather... All Departures Delayed... ";
+console.log(message2.repeat(5)); // Bad weather... All Departures Delayed... Bad weather... All Departures Delayed... Bad weather... All Departures Delayed... Bad weather... All Departures Delayed... Bad weather... All Departures Delayed... 
+
+const planesInLines = function(n) {
+  console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+}
+
+planesInLines(7); // logs There are 7 planes in line ✈️✈️✈️✈️✈️✈️✈️
+
 
 
 /*

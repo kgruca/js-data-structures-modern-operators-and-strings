@@ -1,8 +1,6 @@
 'use strict';
 
 // Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
   const openingHours = {
     thu: {
@@ -48,6 +46,32 @@ const restaurant = {
 };
 
 
+// String Methods Practice
+
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+console.log(flights.split('+'));
+// logs ['_Delayed_Departure;fao93766109;txl2133758440;11:25', '_Arrival;bru0943384722;fao93766109;11:45', '_Delayed_Arrival;hel7439299980;fao93766109;12:05', '_Departure;fao93766109;lis2323639855;12:30']
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  const output = `${type.replaceAll('_', ' ')} from ${from.slice(0, 3).toUpperCase()} to ${to.slice(0, 3).toUpperCase()} (${time.replace(':', 'h')})`;
+  console.log(output);
+}
+// pass 1 logs _Delayed_Departure fao93766109 txl2133758440 (11:25)
+// _Arrival bru0943384722 fao93766109 (11:45)
+// _Delayed_Arrival hel7439299980 fao93766109 (12:05)
+// _Departure fao93766109 lis2323639855 (12:30)
+
+
+
+
+/*
 // More string methods - split
 console.log('a+very+nice+string'.split('+')); // logs ['a', 'very', 'nice', 'string']
 console.log('Krzysztof Gruca'.split(' ')); // logs ['Krzysztof', 'Gruca']
@@ -100,8 +124,6 @@ const planesInLines = function(n) {
 planesInLines(7); // logs There are 7 planes in line ✈️✈️✈️✈️✈️✈️✈️
 
 
-
-/*
 const airline = 'LOT';
 const plane = 'Dreamliner';
 console.log(plane[0]); // logs D
